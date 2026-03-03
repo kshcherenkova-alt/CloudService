@@ -2,13 +2,261 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CloudService</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>CloudService — Cloud platform for your business</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <h1>CloudService</h1>
-    <p>Скоро здесь будет сайт</p>
-    <script src="js/script.js"></script>
+  <body id="home" itemscope itemtype="https://schema.org/SoftwareApplication">
+    <!-- Скрытые обязательные свойства для Google -->
+    <meta itemprop="name" content="CloudService" />
+    <meta itemprop="applicationCategory" content="BusinessApplication" />
+    <meta itemprop="operatingSystem" content="Web, Windows, MacOS, Linux" />
+
+    <header class="header">
+      <div class="container header-content">
+        <div class="logo">
+          <a href="#home">
+            <img
+              src="images/Logo.svg"
+              alt="CloudService Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-we-work">How We Work</a></li>
+          </ul>
+        </nav>
+        <!-- Кнопка Contact теперь тоже ссылка -->
+        <a href="#contact" class="btn-contact-top">
+          <span class="icon-phone"></span> Contact
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION (ID: home уже на body, но можно продублировать) -->
+      <section class="hero">
+        <div class="hero-overlay">
+          <div class="container">
+            <h1 itemprop="description">Cloud platform for your business</h1>
+            <p class="hero-subtitle">Secure storage and analytics</p>
+            <a href="#contact" class="btn-primary-link">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section class="services container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+          <article
+            class="service-card"
+            itemprop="offers"
+            itemscope
+            itemtype="https://schema.org/Offer"
+          >
+            <meta itemprop="price" content="0" />
+            <meta itemprop="priceCurrency" content="USD" />
+            <figure>
+              <img
+                src="images/App settings alt.svg"
+                alt="Icon Cloud Infrastructure"
+              />
+            </figure>
+            <h3 itemprop="itemOffered">Cloud Infrastructure</h3>
+            <p>
+              We provide scalable and secure cloud infrastructure to host your
+              applications.
+            </p>
+          </article>
+
+          <article
+            class="service-card"
+            itemprop="offers"
+            itemscope
+            itemtype="https://schema.org/Offer"
+          >
+            <meta itemprop="price" content="0" />
+            <meta itemprop="priceCurrency" content="USD" />
+            <figure>
+              <img
+                src="images/icon-park-outline_add-web.svg"
+                alt="Cloud Platform"
+              />
+            </figure>
+            <h3 itemprop="itemOffered">Cloud Platform</h3>
+            <p>
+              A cloud platform provides on-demand access to computing resources.
+            </p>
+          </article>
+
+          <article
+            class="service-card"
+            itemprop="offers"
+            itemscope
+            itemtype="https://schema.org/Offer"
+          >
+            <meta itemprop="price" content="0" />
+            <meta itemprop="priceCurrency" content="USD" />
+            <figure>
+              <img
+                src="images/grommet-icons_cloud-software.svg"
+                alt="Custom Software"
+              />
+            </figure>
+            <h3 itemprop="itemOffered">Custom Software</h3>
+            <p>
+              We build custom software that fits seamlessly into your unique
+              business processes.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION (ID: about) -->
+      <section id="about" class="feature-alt">
+        <div class="container flex-row">
+          <div class="feature-text">
+            <h2>Cloud Infrastructure</h2>
+            <p>
+              It includes architecting scalable cloud infrastructure, optimizing
+              application performance, and ensuring seamless integration.
+            </p>
+          </div>
+          <aside class="feature-image">
+            <img
+              src="images/app development 1.svg"
+              alt="Infrastructure Visualization"
+            />
+          </aside>
+        </div>
+      </section>
+
+      <section class="feature-white">
+        <div class="container flex-row-reverse">
+          <div class="feature-text">
+            <h2>Cloud Platform</h2>
+            <p>
+              CloudService is built not just on servers, but on a architecture
+              designed for high-performance computing.
+            </p>
+          </div>
+          <div class="feature-image">
+            <img
+              src="images/cloudplatform.svg"
+              alt="Cloud Platform Technologies"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS & PROCESS (ID: how-we-work) -->
+      <section id="how-we-work">
+        <div class="stats">
+          <div class="container stats-flex">
+            <div class="stat-item">
+              <p class="stat-number">140</p>
+              <p class="stat-desc">Happy Customer</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number">99,9%</p>
+              <p class="stat-desc">Uptime</p>
+            </div>
+            <div class="stat-item">
+              <p class="stat-number">20</p>
+              <p class="stat-desc">Success stories</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="meet-service container flex-row">
+          <div class="feature-image">
+            <img src="images/Group 56.svg" alt="Our Team Members" />
+          </div>
+          <div class="feature-text">
+            <h2>Meet Our Service</h2>
+            <p>
+              CloudService is not just an infrastructure, but an intelligent
+              cloud platform built for high performance. Meet the team that is
+              building a strong foundation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT FORM (ID: contact) -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="contact-box">
+            <h2 class="form-title">Contact Us</h2>
+            <form action="#">
+              <input type="text" placeholder="Enter Your Name" required />
+              <input type="email" placeholder="Enter Your Email" required />
+              <input type="tel" placeholder="Enter Your Phone Number" />
+              <button type="submit" class="btn-submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#how-we-work">How we work</a></li>
+            <li><a href="#">Terms & Condition</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <address>
+            <p>Address: Minsk, Belarus</p>
+            <p>Phone: +375441234567</p>
+            <p>Email: ksuhi@gmail.com</p>
+          </address>
+        </div>
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/kssnlsv?igsh=MXdweWM3NjM1NnRmOQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kseniya-shcherenkova-92901b387"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Linkedin
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://vk.ru/kseshaksal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                VK
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright 2026 All Rights Reserved By CloudService.
+      </div>
+    </footer>
   </body>
 </html>
