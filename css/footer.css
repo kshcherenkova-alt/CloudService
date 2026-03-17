@@ -1,0 +1,82 @@
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+
+.footer {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 80px 0 40px;
+  width: 100%;
+}
+
+/* Сетка футера: делаем её горизонтальной через Flexbox */
+.footer__grid {
+  display: flex;
+  justify-content: space-between; /* Распределяем столбцы по всей ширине */
+  align-items: flex-start; /* Выравниваем по верхней линии */
+  gap: 20px;
+  margin-bottom: 60px;
+  text-align: center; /* Центрируем текст внутри каждого столбца */
+}
+
+/* Каждый столбец занимает равную часть места */
+.footer__col {
+  flex: 1;
+  min-width: 200px; /* Чтобы колонки не становились слишком узкими */
+}
+
+/* Заголовки */
+.footer__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--color-white);
+}
+
+/* Списки: убираем точки и отступы */
+.footer__list {
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* Элементы списка и адрес */
+.footer__link,
+.footer__address p {
+  font-size: 18px;
+  color: #f4f4ff;
+  margin-bottom: 12px;
+  display: block;
+  text-decoration: none;
+  font-style: normal; /* Убираем курсив у тега address */
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: var(--color-accent-light);
+}
+
+/* Нижняя часть с копирайтом */
+.footer__copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  font-size: 16px;
+  color: rgba(244, 244, 255, 0.6);
+}
+
+/* ==========================================================================
+   ADAPTIVE (Переход на вертикаль только на мобилках)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .footer__grid {
+    flex-direction: column; /* На телефонах всё же лучше в столбик */
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer__col {
+    width: 100%;
+  }
+}

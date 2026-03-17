@@ -1,0 +1,171 @@
+/* ==========================================================================
+   HEADER & NAVIGATION
+   ========================================================================== */
+
+.header {
+  height: 90px;
+  background: var(--color-white);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.header__container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 40px; /* Отступ от краев, чтобы не липло */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Логотип */
+.header__logo .logo-img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+/* Навигация */
+.nav__list {
+  display: flex;
+  gap: 40px;
+  list-style: none; /* Убираем точки */
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-primary);
+  position: relative;
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+}
+
+.nav__link--active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Кнопка Contact в хедере (В РАМКЕ/ОВАЛЕ) */
+.header__btn.btn-contact {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 35px;
+  border-radius: 50px; /* Делаем овальную форму */
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.header__btn.btn-contact:hover {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   BURGER MENU (HIDDEN BY DEFAULT)
+   ========================================================================== */
+
+.header__checkbox,
+.header__burger {
+  display: none;
+}
+
+/* ==========================================================================
+   ADAPTIVE (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .header__container {
+    padding: 0 25px;
+  }
+
+  /* Показываем бургер */
+  .header__burger {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .header__burger span,
+  .header__burger::before,
+  .header__burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger span {
+    top: 9px;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+
+  /* Анимация крестика при нажатии */
+  .header__checkbox:checked + .header__burger span {
+    opacity: 0;
+  }
+  .header__checkbox:checked + .header__burger::before {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .header__checkbox:checked + .header__burger::after {
+    bottom: 8px;
+    transform: rotate(-45deg);
+  }
+
+  /* Мобильное меню (выезжает слева) */
+  .header__nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--color-white);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.5s ease-in-out;
+    padding: 100px 40px;
+    z-index: 1001;
+  }
+
+  .header__checkbox:checked ~ .header__nav {
+    left: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .nav__link {
+    font-size: 24px;
+  }
+
+  /* Скрываем кнопку в хедере на мобилках или переносим её внутрь меню */
+  .header__btn {
+    display: none;
+  }
+}

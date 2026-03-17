@@ -1,260 +1,116 @@
+/* ==========================================================================
+   BASE STYLES & RESETS
+   ========================================================================== */
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: #fff;
-  width: 1440px;
-  margin: 0 auto;
-  color: #333;
+  font-family: var(--font-main);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased; /* Улучшенная отрисовка шрифтов */
 }
-.container {
-  width: 1140px;
-  margin: 0 auto;
-}
-ul {
+
+/* 1. УБИРАЕМ ТОЧКИ У ВСЕХ СПИСКОВ В ПРОЕКТЕ */
+ul,
+li {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+/* Настройка контейнера, чтобы контент не прилипал к краям */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 40px; /* Безопасные отступы по бокам */
+}
+
 a {
   text-decoration: none;
   color: inherit;
+  transition: var(--transition);
 }
 
-/* Header */
-.header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-}
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav ul {
-  display: flex;
-  gap: 30px;
-}
-.nav a {
-  font-weight: 500;
-  color: #555;
-}
-.nav a.active {
-  color: #ef0d33;
-}
-.btn-contact-top {
-  background: #0a044d;
-  color: #fff;
-  padding: 10px 25px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Hero */
-.hero {
-  background: url("hero-bg.jpg") center/cover;
-  height: 618px;
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-.hero-overlay {
-  background: rgba(10, 4, 77, 0.7);
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-  text-decoration: underline;
-}
-.hero-subtitle {
-  font-size: 32px;
-  font-weight: 300;
-  margin-bottom: 30px;
-}
-.btn-primary {
-  background: #fff;
-  color: #0a044d;
-  padding: 15px 40px;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* Services */
-.services {
-  padding: 80px 0;
-  text-align: center;
-}
-.services h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  border-bottom: 2px solid #ef0d33;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-.services-grid {
-  display: flex;
-  gap: 30px;
-}
-.service-card {
-  flex: 1;
-  padding: 30px;
-  border: 1px solid #f0f0f0;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.service-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.service-card img {
-  height: 60px;
-  margin-bottom: 20px;
-}
-.service-card h3 {
-  margin-bottom: 15px;
-  color: #0a044d;
-}
-
-/* Features */
-.feature-alt {
-  background: #f4f4ff;
-  padding: 60px 0;
-}
-.feature-white {
-  padding: 60px 0;
-}
-.flex-row {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-.flex-row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 50px;
-}
-.feature-text {
-  flex: 1;
-}
-.feature-text h2 {
-  color: #0a044d;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-.feature-image {
-  flex: 1;
-  text-align: center;
-}
-.feature-image img {
+img {
   max-width: 100%;
+  display: block;
 }
 
-/* Stats */
-.stats {
-  background: url("stats-bg.jpg") center/cover;
-  padding: 80px 0;
-  color: #fff;
-  position: relative;
-}
-.stats::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(10, 4, 77, 0.8);
-}
-.stats-flex {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-}
-.stat-item {
-  text-align: center;
-  border: 1px solid #fff;
-  padding: 20px 40px;
-  min-width: 200px;
-}
-.stat-number {
-  font-size: 36px;
-  font-weight: bold;
-}
+/* ==========================================================================
+   COMMON BUTTONS (ОБЩИЕ СТИЛИ КНОПОК)
+   ========================================================================== */
 
-/* Contact Form */
-.contact-section {
-  background: url("contact-bg.jpg") center/cover;
-  padding: 100px 0;
-}
-.contact-box {
-  background: rgba(10, 4, 77, 0.9);
-  width: 600px;
-  margin: 0 auto;
-  padding: 40px;
-  border-radius: 10px;
-}
-.form-title {
-  color: #fff;
-  text-align: center;
-  background: #ef0d33;
-  padding: 10px;
-  margin-bottom: 30px;
-  border-radius: 5px;
-}
-.contact-box input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-}
-.btn-submit {
-  width: 100%;
-  padding: 15px;
-  background: #ef0d33;
+/* 3. Кнопка в Hero (Белая плашка без рамки) */
+.btn-primary {
+  background: var(--color-white);
+  color: var(--color-primary);
+  padding: 14px 40px;
+  border-radius: 8px; /* Легкое скругление углов */
+  font-weight: 700;
+  font-size: 20px;
+  display: inline-block;
   border: none;
-  color: #fff;
-  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: var(--color-light-bg);
+  transform: translateY(-2px);
+}
+
+/* 2. Кнопка Contact в хедере (В ОВАЛЬНОЙ РАМКЕ) */
+.btn-contact {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 10px 35px;
+  border-radius: 50px; /* Овальная форма (Pill shape) */
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+  border: 2px solid var(--color-primary);
+  text-align: center;
   cursor: pointer;
 }
 
-/* Footer */
-.footer {
-  background: #03012c;
-  color: #fff;
-  padding: 60px 0 20px;
+.btn-contact:hover {
+  background: transparent;
+  color: var(--color-primary);
 }
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 40px;
+
+/* Вспомогательный класс для скрытия элементов микроразметки */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
-.footer-col h3 {
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-.footer-col li {
-  margin-bottom: 10px;
-  color: #ccc;
-}
-.footer-col address p {
-  margin-bottom: 10px;
-  color: #ccc;
-}
-.copyright {
-  text-align: center;
-  border-top: 1px solid #222;
-  padding-top: 20px;
-  color: #888;
+
+/* ==========================================================================
+   RESPONSIVE BASE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px; /* Меньше отступы на мобилках */
+  }
+
+  .btn-primary {
+    font-size: 18px;
+    padding: 12px 30px;
+  }
 }

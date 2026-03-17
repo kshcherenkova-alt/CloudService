@@ -1,0 +1,20 @@
+:root {
+  /* Colors */
+  --color-primary: #040443;
+  --color-accent: #b01435;
+  --color-accent-light: #fb1b4b;
+  --color-accent-form: #e70737;
+  --color-text-main: #040443;
+  --color-text-secondary: #4b4b7b;
+  --color-white: #ffffff;
+  --color-light-bg: #f4f4ff;
+  --color-overlay: rgba(4, 4, 67, 0.82);
+  --color-gray-light: #d9d9d9;
+
+  /* Typography */
+  --font-main: "Montserrat", sans-serif;
+
+  /* Layout */
+  --container-width: 1200px;
+  --transition: 0.3s ease;
+}
